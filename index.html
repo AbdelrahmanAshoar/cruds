@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUDS</title>
+  <link rel="stylesheet" href="assets/CSS/bootstrap.css">
+  <link rel="stylesheet" href="assets/CSS/style.css">
+  <script src="https://kit.fontawesome.com/5ba8e78fdc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="header text-center">
+      <h1>CRUDS</h1>
+      <span>PRODUCT MANAGMENT SYSTEM</span>
+      <i class="fa-solid fa-toggle-on fs-2 float-end" id="page-mode"></i>
+    </div>
+
+    <div class="input-product">
+      <input type="text" name="title" id="pro-Name" placeholder="title" class="w-100">
+      <small id="warning-title" class="text-danger d-block mb-3"></small>
+      <div class="row justify-content-between">
+        <input type="number" name="price" id="price" placeholder="price" class="col-2" onkeyup="GetTotal()">
+        <input type="number" name="taxes" id="taxes" placeholder="taxes" class="col-2" onkeyup="GetTotal()">
+        <input type="number" name="ads" id="ads" placeholder="ads" class="col-2" onkeyup="GetTotal()">
+        <input type="number" name="discount" id="discount" placeholder="discount" class="col-2" onkeyup="GetTotal()">
+        <button
+        type="button"
+        class="btn btn-danger col-2 h-75"
+        id="total-price">
+        total:
+        </button>
+      </div>  
+      <small id="warning-price" class="text-danger d-block mb-3"></small>
+      <input type="text" name="category" id="category" placeholder="category" class="w-100">
+      <input type="number" name="count" id="count" placeholder="count" class="w-100 my-3">
+      
+      <button
+        type="submit"
+        class="btn btn-primary w-100 mb-4 fw-bold"
+        id="create">
+      Create
+      </button>
+    </div>
+    
+    <div class="output-product">
+      <input type="text" name="search" id="search" placeholder="Search" class="w-100" onkeyup="searchData(this.value)">
+      <div class="row gap-2 mb-3 searchbtns">
+        <button type="button"
+        class="btn btn-primary col" 
+        id="sbt">
+          Search By Title
+        </button>
+        <button type="button"
+        class="btn btn-primary col" 
+        id="sbc">
+          Search By Category
+        </button>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary w-100 mt-4 d-none"
+        id="deleteAll"
+        onclick = "deletAll()">
+      </button>
+
+      <div class="table-responsive mt-3">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Price</th>
+              <th scope="col">Taxes</th>
+              <th scope="col">Ads</th>
+              <th scope="col">Discount</th>
+              <th scope="col">Total</th>
+              <th scope="col">Category</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <script src="assets/JS/popper.min.js"></script>
+  <script src="assets/JS/bootstrap.js"></script>
+  <script src="assets/JS/main.js"></script>
+</body>
+</html>
